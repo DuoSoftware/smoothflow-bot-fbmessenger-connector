@@ -12,6 +12,10 @@ module.exports = {
             "enabled" : 'false'
         }
     },
+    "fbconnect":{
+        "Port":"FB_CONNECT_PORT",
+        "VerifyToken":"FB_CONNECT_VERIFYTOKEN"
+    },
 };
 
 //NODE_CONFIG_DIR

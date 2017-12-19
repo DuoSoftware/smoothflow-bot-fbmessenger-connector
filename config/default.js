@@ -12,4 +12,8 @@ module.exports = {
             "enabled" : 'false'
         }
     },
+    "fbconnect":{
+        "Port":"1337",
+        "VerifyToken":"4f2b9c3ad"
+    },
 };

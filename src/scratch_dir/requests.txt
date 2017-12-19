@@ -1,0 +1,289 @@
+//--------------- whitelist domains-----------------------------
+https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAMegfEn8iEBAFgGUCHgfEcRMOd14n1JMnoXxCZBnNdvIjun6SUTzsTVmmvl1XtZCzcJrLxYC3vR6sluSB3YhXhiSgRHXRnmo4f16PTizccbG3rHrIQNTdT2WpCYZAfoZBZApoaBMrApVzut4oSOmDGqIQYNcGxzjEKZCqZCk0l3AZDZD
+{
+  "whitelisted_domains":[
+    "https://petersfancyapparel.com",
+    "peterssendreceiveapp.ngrok.io"
+  ]
+}
+
+//-------------------add get started ------------------
+https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAMegfEn8iEBAFgGUCHgfEcRMOd14n1JMnoXxCZBnNdvIjun6SUTzsTVmmvl1XtZCzcJrLxYC3vR6sluSB3YhXhiSgRHXRnmo4f16PTizccbG3rHrIQNTdT2WpCYZAfoZBZApoaBMrApVzut4oSOmDGqIQYNcGxzjEKZCqZCk0l3AZDZD
+
+{
+  "get_started":{
+    "payload":"<GET_STARTED_PAYLOAD>"
+  }
+}
+
+//------------------------ persist menu--------------------- ( should have get started ) ---------------------
+https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAMegfEn8iEBAFgGUCHgfEcRMOd14n1JMnoXxCZBnNdvIjun6SUTzsTVmmvl1XtZCzcJrLxYC3vR6sluSB3YhXhiSgRHXRnmo4f16PTizccbG3rHrIQNTdT2WpCYZAfoZBZApoaBMrApVzut4oSOmDGqIQYNcGxzjEKZCqZCk0l3AZDZD
+{
+  "persistent_menu":[
+    {
+      "locale":"default",
+      "composer_input_disabled": false,
+      "call_to_actions":[
+        {
+          "title":"My Account",
+          "type":"nested",
+          "call_to_actions":[
+            {
+              "title":"Pay Bill",
+              "type":"postback",
+              "payload":"PAYBILL_PAYLOAD"
+            },
+            {
+              "type":"web_url",
+              "title":"Latest News",
+              "url":"https://www.messenger.com/",
+              "webview_height_ratio":"full"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+// --------- Send messages ----------------
+
+https://graph.facebook.com/v2.6/me/messages?access_token=EAAMegfEn8iEBAFgGUCHgfEcRMOd14n1JMnoXxCZBnNdvIjun6SUTzsTVmmvl1XtZCzcJrLxYC3vR6sluSB3YhXhiSgRHXRnmo4f16PTizccbG3rHrIQNTdT2WpCYZAfoZBZApoaBMrApVzut4oSOmDGqIQYNcGxzjEKZCqZCk0l3AZDZD
+
+//--------- text message ------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message":{
+  "text":"hello, world!"
+  }
+}
+
+//------------- attachment ------------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message":{
+      "attachment":{
+        "type":"image",
+        "payload":{
+          "url":"http://spadeworx.com/wp-content/uploads/2016/07/Artificial_Intel_Banner.jpg",
+          "is_reusable":true
+        }
+      }
+   }
+}
+
+//------------------- quick reply----------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message":{
+    "text": "Here's a quick reply!",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Search",
+        "payload":"huehuehue",
+        "image_url":"http://spadeworx.com/wp-content/uploads/2016/07/Artificial_Intel_Banner.jpg"
+      },
+      {
+        "content_type":"location"
+      },
+      {
+        "content_type":"text",
+        "title":"Something Else",
+        "payload":"huehuehue2"
+      }
+    ]
+  }
+}
+
+//-------------------------send generic template---------------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+"message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"Welcome to Peters Hats",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"Weve got the right hat for everyone.",
+            "default_action": {
+              "type": "web_url",
+              "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
+              "messenger_extensions": true,
+              "webview_height_ratio": "tall",
+              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+            },
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersfancybrownhats.com",
+                "title":"View Website"
+              },{
+                "type":"postback",
+                "title":"Start Chatting",
+                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+//------------------------ Reciept template -------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"receipt",
+        "recipient_name":"Stephane Crozatier",
+        "order_number":"12345678902",
+        "currency":"USD",
+        "payment_method":"Visa 2345",
+        "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
+        "timestamp":"1428444852",
+        "address":{
+          "street_1":"1 Hacker Way",
+          "street_2":"",
+          "city":"Menlo Park",
+          "postal_code":"94025",
+          "state":"CA",
+          "country":"US"
+        },
+        "summary":{
+          "subtotal":75.00,
+          "shipping_cost":4.95,
+          "total_tax":6.19,
+          "total_cost":56.14
+        },
+        "adjustments":[
+          {
+            "name":"New Customer Discount",
+            "amount":20
+          },
+          {
+            "name":"$10 Off Coupon",
+            "amount":10
+          }
+        ],
+        "elements":[
+          {
+            "title":"Classic White T-Shirt",
+            "subtitle":"100% Soft and Luxurious Cotton",
+            "quantity":2,
+            "price":50,
+            "currency":"USD",
+            "image_url":"http://petersapparel.parseapp.com/img/whiteshirt.png"
+          },
+          {
+            "title":"Classic Gray T-Shirt",
+            "subtitle":"100% Soft and Luxurious Cotton",
+            "quantity":1,
+            "price":25,
+            "currency":"USD",
+            "image_url":"http://petersapparel.parseapp.com/img/grayshirt.png"
+          }
+        ]
+      }
+    }
+  }
+}
+
+//------------------ list template ---------------------
+{
+  "messaging_type": "RESPONSE",
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message": {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "list",
+        "top_element_style": "compact",
+        "elements": [
+          {
+            "title": "Classic T-Shirt Collection",
+            "subtitle": "See all our colors",
+            "image_url": "https://peterssendreceiveapp.ngrok.io/img/collection.png",
+            "buttons": [
+              {
+                "title": "View",
+                "type": "web_url",
+                "url": "https://peterssendreceiveapp.ngrok.io/collection",
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+              }
+            ]
+          },
+          {
+            "title": "Classic White T-Shirt",
+            "subtitle": "See all our colors",
+            "default_action": {
+              "type": "web_url",
+              "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
+              "messenger_extensions": false,
+              "webview_height_ratio": "tall"
+            }
+          },
+          {
+            "title": "Classic Blue T-Shirt",
+            "image_url": "https://peterssendreceiveapp.ngrok.io/img/blue-t-shirt.png",
+            "subtitle": "100% Cotton, 200% Comfortable",
+            "default_action": {
+              "type": "web_url",
+              "url": "https://peterssendreceiveapp.ngrok.io/view?item=101",
+              "messenger_extensions": true,
+              "webview_height_ratio": "tall",
+              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+            },
+            "buttons": [
+              {
+                "title": "Shop Now",
+                "type": "web_url",
+                "url": "https://peterssendreceiveapp.ngrok.io/shop?item=101",
+                "messenger_extensions": true,
+                "webview_height_ratio": "tall",
+                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+              }
+            ]
+          }
+        ],
+         "buttons": [
+          {
+            "title": "View More",
+            "type": "postback",
+            "payload": "payload"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
