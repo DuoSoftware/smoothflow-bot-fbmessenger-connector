@@ -13,7 +13,10 @@ module.exports = {
         }
     },
     "fbconnect":{
-        "Port":"1337",
-        "VerifyToken":"4f2b9c3ad"
+        "Port":"1337"
     },
-};
+    "pubsub":{
+        "Port":"1338"
+    },
+}
+;
