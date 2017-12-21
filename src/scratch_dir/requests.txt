@@ -287,3 +287,48 @@ https://graph.facebook.com/v2.6/me/messages?access_token=EAAMegfEn8iEBAFgGUCHgfE
 
 
 
+
+//------------------ send media ---------------------
+
+{
+  "recipient":{
+    "id":"1409893819119841"
+  },
+  "message":{
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "image",
+               "attachment_id": "857170324452007",
+               "buttons": [
+		         {
+		            "type": "web_url",
+		            "url": "http://www.duoworld.com",
+		            "title": "View Website"
+		         }
+		      ]
+            }
+         ]
+      }
+    }
+  }
+}
+
+//---------------------------- upload media ---------------------------------
+
+https://graph.facebook.com/v2.6/me/message_attachments?access_token=EAAMegfEn8iEBAFgGUCHgfEcRMOd14n1JMnoXxCZBnNdvIjun6SUTzsTVmmvl1XtZCzcJrLxYC3vR6sluSB3YhXhiSgRHXRnmo4f16PTizccbG3rHrIQNTdT2WpCYZAfoZBZApoaBMrApVzut4oSOmDGqIQYNcGxzjEKZCqZCk0l3AZDZD
+
+{
+  "message":{
+    "attachment":{
+      "type":"image",
+      "payload":{
+        "url":"http://spadeworx.com/wp-content/uploads/2016/07/Artificial_Intel_Banner.jpg",
+        "is_reusable": true
+      }
+    }
+  }
+}
