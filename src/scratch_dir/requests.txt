@@ -105,7 +105,7 @@ https://graph.facebook.com/v2.6/me/messages?access_token=EAAMegfEn8iEBAFgGUCHgfE
   }
 }
 
-//-------------------------send generic template---------------------------
+//-------------------------send generic template ---------------------------
 {
   "messaging_type": "RESPONSE",
   "recipient":{
@@ -379,4 +379,46 @@ https://graph.facebook.com/v2.6/me/message_attachments?access_token=EAAMegfEn8iE
       }
     }
   }
+}
+
+
+
+--- location response ----------
+
+{  
+   "object":"page",
+   "entry":[  
+      {  
+         "id":"856123081223398",
+         "time":1514960009651,
+         "messaging":[  
+            {  
+               "sender":{  
+                  "id":"1765951210121630"
+               },
+               "recipient":{  
+                  "id":"856123081223398"
+               },
+               "timestamp":1514960009479,
+               "message":{  
+                  "mid":"mid.$cAAMKo5ovheFm6-yBB1guqc1uEauw",
+                  "seq":68054,
+                  "attachments":[  
+                     {  
+                        "title":"Duo Software",
+                        "url":"https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bing.com%2Fmaps%2Fdefault.aspx%3Fv%3D2%26pc%3DFACEBK%26mid%3D8100%26where1%3DColombo%252C%2BSri%2BLanka%26FORM%3DFBKPL1%26mkt%3Den-US&h=ATPPbAR3DxQcYhUbfsvxY2gp8y_SgSq8NZnn3OnCTtbwktdxoMBAa8vlADzkDGYdcrFEmDFToghXKCK80889HxDKearRW-Y0o2kDHr_RZo7jXwtJcw&s=1&enc=AZPr9sF0bFHspy5tiEPKJ680e6voULbCGPUNVxIe1kuSsbikDUdxzpaTLORu81cangf8XU6H7BJ3RDwDX0rJ352k",
+                        "type":"location",
+                        "payload":{  
+                           "coordinates":{  
+                              "lat":6.9032412197763,
+                              "long":79.852455081734
+                           }
+                        }
+                     }
+                  ]
+               }
+            }
+         ]
+      }
+   ]
 }
